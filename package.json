@@ -1,0 +1,52 @@
+{
+  "name": "nodejs-clean-architecture",
+  "version": "1.0.0",
+  "description": "A discussion on how Node.js projects can be organized.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/start",
+    "watch": "nodemon ./bin/start",
+    "lint": "eslint .",
+    "pretest": "NODE_ENV=test npm run lint",
+    "test": "NODE_ENV=test nyc mocha spec/**/*.spec.js --timeout 5000",
+    "test:watch": "npm test -- --watch",
+    "coverage": "NODE_ENV=test nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "keywords": [
+    "craftsmanship",
+    "quality"
+  ],
+  "author": "Simon Renoult <simon.renoult@gmail.com>",
+  "contributors": ["Romy Alula <goumiesone.dev@gmail.com>"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "codecov": "^3.0.2",
+    "eslint": "^5.3.0",
+    "eslint-config-prettier": "^2.8.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-promise": "^3.7.0",
+    "faker": "^4.1.0",
+    "got": "^9.0.0",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.3",
+    "nyc": "^12.0.2",
+    "prettier": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bunyan": "^1.8.12",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "joi": "^13.2.0",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.37.6",
+    "sqlite3": "^4.0.0"
+  }
+}
